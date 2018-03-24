@@ -1,0 +1,79 @@
+$columns: 12;
+
+.flex {
+  display:flex;
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.start {
+  align-self: flex-start;
+}
+
+.center {
+  align-self: center;
+}
+
+.end {
+  align-self: flex-end;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.around {
+  justify-content: space-around;
+}
+
+.row {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  & > * {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}
+
+$columns: 12;
+@for $i from 1 through $columns {
+  .w-#{unquote($i)} {
+    width: #{unquote(($i * 100 / $columns - 2) + "%")};
+  }
+}
+
+@media screen and (min-width: 576px) {
+  @for $i from 1 through $columns {
+    .w-sm-#{unquote($i)} {
+      width: #{unquote(($i * 100 / $columns - 2) + "%")};
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  @for $i from 1 through $columns {
+    .w-md-#{unquote($i)} {
+      width: #{unquote(($i * 100 / $columns - 2) + "%")};
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  @for $i from 1 through $columns {
+    .w-lg-#{unquote($i)} {
+      width: #{unquote(($i * 100 / $columns - 2) + "%")};
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  @for $i from 1 through $columns {
+    .w-xl-#{unquote($i)} {
+      width: #{unquote(($i * 100 / $columns - 2) + "%")};
+    }
+  }
+}

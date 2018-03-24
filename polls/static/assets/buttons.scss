@@ -1,0 +1,34 @@
+@import './colors.scss';
+
+.btn {
+  cursor: pointer;
+  padding: 0.35rem;
+}
+
+@each $name, $color in $colors {
+  .btn-full-#{unquote($name)} {
+    @extend .btn;
+    background-color: $color;
+    color: white;
+  }
+
+  .btn-min-#{unquote($name)} {
+    @extend .btn;
+    position: relative;
+    overflow: hidden;
+    &:hover::after {
+      right:0;
+    }
+    &::after {
+      transition: right 0.3s ease;
+      content: "";
+      top:-0.35rem;
+      right:-100%;
+      width:100%;
+      height:100%;
+      position:absolute;
+      border-bottom: 2px solid $color;
+    }
+  }
+
+}

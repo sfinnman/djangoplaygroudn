@@ -1,0 +1,32 @@
+@import 'configuration.scss';
+
+@import 'main/positions.scss';
+@import 'main/size.scss';
+@import 'main/text.scss';
+
+@import 'colors.scss';
+@import 'buttons.scss';
+
+@include angular-material-theme($app-theme-light);
+.theme-dark {
+    @include angular-material-theme($app-theme-dark);
+}
+
+.mountain {
+    position:relative;
+    background: linear-gradient(rgba(255,255,255,0) 0%, #fff 100%);
+}
+
+.mountain::after {
+    content: "";
+    background: url('mountain.png');
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    z-index: -1;
+    background-position: 100%, 0%;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
